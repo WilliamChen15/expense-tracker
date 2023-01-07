@@ -1,1 +1,44 @@
-<h2>老爸私房錢</h2>
+
+<div class="container">
+  <div class="sort-select">
+    <select name="" id=""></select>
+  </div>
+  <div class="totalAmount">
+    <span>總金額: <h4>{{totalAmount}}</h4> </span> 
+  </div>
+  <div class="details">
+    {{#each record}}
+    <div class="detail">
+
+    </div>
+    <div class="method">
+      <a href="/"><button>修改</button></a>
+      <a href="/"><button type="button" class="btn btn-sm btn-danger text-white" data-bs-toggle="modal"
+              data-bs-target="#delete{{this._id}}">刪除</button></a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="delete{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-secondary" id="exampleModalLabel">Delete</h5>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span class="X" aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-secondary">
+            Do you sure you want to delete<span class="font-weight-bold">「{{this.name}}:{{this.cost}}」</span>?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">Cancel</button>
+            <form action="/users/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+              <button class="btn btn-danger text-white" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

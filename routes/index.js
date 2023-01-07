@@ -5,7 +5,7 @@ const home = require('./modules/home')
 const users = require('./modules/users')
 const auth = require('./modules/auth')
 
-// router.use('/users', users)
+router.use('/users', users)
 // router.use('/auth', auth) // FB登入
 router.use('/', home) // 登入後才能用
 // 匯出路由器
