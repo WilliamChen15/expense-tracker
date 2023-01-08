@@ -26,4 +26,10 @@ router.post('/register', (req, res) => {
     .then(() => res.redirect('/users/login'))
 })
 
+router.get('/logout', (req, res) => {
+  req.logout() // Passport.js 提供的函式，清除 session
+  req.flash('success_msg', '你已經登出。')
+  res.redirect('/users/login')
+})
+
 module.exports = router
