@@ -1,19 +1,27 @@
 const db = require('../../config/mongoose')
-const raw = require('../raw')
+const Category = require('../category') 
 
-const raws = [
+const category = [
   {
-    data1: "",
-    data2: ""
+    id: 1,
+    name: "家居物業"
   },
   {
-    data1: "",
-    data2: ""
+    id: 2,
+    name: "交通出行"
   },
   {
-    data1: "",
-    data2: ""
-  }
+    id: 3,
+    name: "休閒娛樂"
+  },
+  {
+    id: 4,
+    name: "餐飲食品"
+  },
+  {
+    id: 5,
+    name: "其他"
+  },
 ]
 
 db.on("error", () => {
@@ -21,7 +29,7 @@ db.on("error", () => {
 })
 
 db.once('open', () => {
-  raw.create(raws)
+  Category.create(category)
     .then(() => {
       console.log("done.")
       db.close()

@@ -7,9 +7,13 @@
     <span>總金額: <h4>{{totalAmount}}</h4> </span> 
   </div>
   <div class="details">
-    {{#each record}}
+    {{!-- {{#each record}} --}}
     <div class="detail">
-
+      <div>icon</div>
+      <div>name</div>
+      <div>amount</div>
+      
+      {{!-- {{this.categoryId}} {{this.name}} {{this.amount}} --}}
     </div>
     <div class="method">
       <a href="/"><button>修改</button></a>
@@ -39,6 +43,6 @@
         </div>
       </div>
     </div>
-    {{/each}}
+    {{!-- {{/each}} --}}
   </div>
 </div>

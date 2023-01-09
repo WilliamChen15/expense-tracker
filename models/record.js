@@ -14,10 +14,12 @@ const recordSchema = new Schema({
     required: true
   },
   userId: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    index: true,
     required: true
   },
-  categoryId:{
+  categoryId: {
     type: Number,
     required: true
   },
@@ -26,4 +28,4 @@ const recordSchema = new Schema({
     default: Date.now
   }
 })
-module.exports = mongoose.model('record', recordSchema)
+module.exports = mongoose.model('Record', recordSchema)
