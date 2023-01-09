@@ -31,7 +31,7 @@ db.on("error", () => {
 db.once('open', () => {
   Category.create(category)
     .then(() => {
-      console.log("done.")
+      console.log("category done.")
       db.close()
     })
     .catch(err => console.log(err))

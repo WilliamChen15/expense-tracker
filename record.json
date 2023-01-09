@@ -1,0 +1,76 @@
+{
+  "record": [
+    {
+      "id": 1,
+      "name": "午餐",
+      "amount": "60",
+      "categoryId": 4
+    },
+    {
+      "id": 2,
+      "name": "晚餐",
+      "amount": "60",
+      "categoryId": 4
+    },
+    {
+      "id": 3,
+      "name": "捷運",
+      "amount": "120",
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "name": "電影:驚奇隊長",
+      "amount": "220",
+      "categoryId": 3
+    },
+    {
+      "id": 5,
+      "name": "租金",
+      "amount": "25000",
+      "categoryId": 1
+    },
+    {
+      "id": 6,
+      "name": "IPhone",
+      "amount": "35000",
+      "categoryId": 5
+    },
+    {
+      "id": 7,
+      "name": "丹丹",
+      "amount": "123",
+      "categoryId": 4
+    },
+    {
+      "id": 8,
+      "name": "衣服",
+      "amount": "2500",
+      "categoryId": 5
+    },
+    {
+      "id": 9,
+      "name": "唱歌",
+      "amount": "350",
+      "categoryId": 3
+    },
+    {
+      "id": 10,
+      "name": "酒吧",
+      "amount": "2500",
+      "categoryId": 3
+    },
+    {
+      "id": 11,
+      "name": "高鐵",
+      "amount": "1500",
+      "categoryId": 2
+    },
+    {
+      "id": 12,
+      "name": "珍奶",
+      "amount": "60",
+      "categoryId": 4
+    }
+  ]
+}
