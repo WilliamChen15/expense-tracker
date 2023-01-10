@@ -1,10 +1,9 @@
-
 <div class="container">
   <div class="sort-select">
     <select name="" id=""></select>
   </div>
   <div class="totalAmount">
-    <span>總金額: <h4>{{totalAmount}}</h4> </span> 
+    <span>總金額: <h4>{{totalAmount}}</h4> </span>
   </div>
   <div class="details">
     {{!-- {{#each record}} --}}
@@ -12,13 +11,13 @@
       <div>icon</div>
       <div>name</div>
       <div>amount</div>
-      
+
       {{!-- {{this.categoryId}} {{this.name}} {{this.amount}} --}}
     </div>
     <div class="method">
       <a href="/"><button>修改</button></a>
       <a href="/"><button type="button" class="btn btn-sm btn-danger text-white" data-bs-toggle="modal"
-              data-bs-target="#delete{{this._id}}">刪除</button></a>
+          data-bs-target="#delete{{this._id}}">刪除</button></a>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="delete{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
