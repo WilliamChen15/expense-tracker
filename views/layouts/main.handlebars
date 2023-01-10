@@ -17,7 +17,7 @@
         <a class="navbar-brand text-light d-inline-block align-top" href="/">
           <b>家庭記帳本</b>
         </a>
-        {{#if login}}
+        {{#if isAuthenticated}}
         <a href="/users/logout"><button class="logout-button text-danger">登出</button></a>
         {{/if}}
       </div>

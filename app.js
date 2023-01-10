@@ -10,6 +10,8 @@ const session = require('express-session')
 
 const methodOverride = require('method-override')
 
+const flash = require('connect-flash')
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
@@ -29,6 +31,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
+// body-parser 解析 req
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(methodOverride('_method'))
@@ -36,6 +39,17 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 
 usePassport(app)
+
+app.use(flash())
+
+// res.locals中的資料，所有view都能存取
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  res.locals.success_msg = req.flash('success_msg') 
+  res.locals.warning_msg = req.flash('warning_msg')  
+  next()
+})
 
 require('./config/mongoose')
 
