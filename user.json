@@ -1,14 +1,12 @@
-{
-  "users": [
-    {
-      "name": "老爸",
-      "email": "dad@example.com",
-      "password": "12345678"
-    },
-    {
-      "name": "老爹",
-      "email": "daddy@example.com",
-      "password": "12345678"
-    }
-  ]
-}
+[
+  {
+    "name": "老爸",
+    "email": "dad@example.com",
+    "password": "12345678"
+  },
+  {
+    "name": "老爹",
+    "email": "daddy@example.com",
+    "password": "12345678"
+  }
+]

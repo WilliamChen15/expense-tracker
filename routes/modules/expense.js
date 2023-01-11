@@ -1,30 +1,61 @@
 const express = require('express')
+const record = require('../../models/record')
 const router = express.Router()
+const Record = require('../../models/record')
 
-const CATEGORY = {
-  家居物業: "https://fontawesome.com/icons/home?style=solid",
-  交通出行: "https://fontawesome.com/icons/shuttle-van?style=solid",
-  休閒娛樂: "https://fontawesome.com/icons/grin-beam?style=solid",
-  餐飲食品: "https://fontawesome.com/icons/utensils?style=solid",
-  其他: "https://fontawesome.com/icons/pen?style=solid"
-}
-
-// 新增
+// 新增頁面
 router.get('/new', (req, res) => {
 
-  res.render('new')
+  res.render('form')
 })
 
-// 編輯
-router.get('/edit', (req, res) => {
+//新增行為
+router.post('/new', (req, res) => {
+  const userId = req.user._id
+  const { name, date, categoryId, amount } = req.body
+  Record.create({
+    name,
+    amount,
+    userId,
+    categoryId,
+    date
+  })
+    .then(() => res.redirect('/'))
+})
 
-  res.render('edit')
+//編輯頁面
+router.get('/edit/:id', (req, res) => {
+  const _id = req.params.id
+  Record.findOne({ _id })
+    .lean()
+    .then(record => {
+      res.render('form', { record })
+    })
+})
+
+//編輯行為
+router.put('/edit/:id', (req, res) => {
+  const _id = req.params.id
+  const { name, date, categoryId, amount } = req.body
+  return Record.findOne({ _id })
+    .then(record => {
+      record.name = name
+      record.date = date
+      record.categoryId = categoryId
+      record.amount = amount
+      return record.save()
+    })
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 // 刪除
-router.delete('/', (req, res) => {
-
-  res.render('')
+router.delete('/:id', (req, res) => {
+  const _id = req.params.id
+  return Record.findOne({ _id })
+    .then(record => record.remove())
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
 })
 
 // 篩選

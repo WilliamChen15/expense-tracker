@@ -6,6 +6,9 @@ const passport = require('passport')
 const bcrypt = require('bcryptjs')
 
 router.get('/login', (req, res) => {
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
   res.render('login')
 })
 
@@ -15,6 +18,9 @@ router.post('/login', passport.authenticate('local', {
 }))
 
 router.get('/register', (req, res) => {
+  if (req.isAuthenticated()) {
+    return res.redirect('/')
+  }
   res.render('register')
 })
 

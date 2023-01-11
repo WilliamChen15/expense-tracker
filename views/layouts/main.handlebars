@@ -7,6 +7,10 @@
   <title>家庭記帳本</title>
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
   <script src="https://kit.fontawesome.com/0abe2b5692.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  {{!-- {{#if indexCSS}}
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  {{/if}} --}}
 </head>
 
 <body class="bg-white">
@@ -14,11 +18,13 @@
     <nav class="navbar navbar-dark bg-secondary" style="padding: 20px;
     background-color: #1451a1;">
       <div class="container">
+        {{#if user}}
+        <a class="navbar-brand" href="/">{{user.name}}的家庭記帳本</a>
+        <a href="/users/logout"><button class="logout-button text-danger">登出</button></a>
+        {{else}}
         <a class="navbar-brand text-light d-inline-block align-top" href="/">
           <b>家庭記帳本</b>
         </a>
-        {{#if isAuthenticated}}
-        <a href="/users/logout"><button class="logout-button text-danger">登出</button></a>
         {{/if}}
       </div>
     </nav>

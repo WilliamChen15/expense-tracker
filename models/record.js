@@ -1,10 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const recordSchema = new Schema({
-  id: {
-    type: Number,
-    required: true
-  },
   name: {
     type: String,
     required: true
@@ -23,9 +19,9 @@ const recordSchema = new Schema({
     type: Number,
     required: true
   },
-  createdAt: {
+  date: {
     type: Date,
-    default: Date.now
-  }
+    required: true
+  },
 })
 module.exports = mongoose.model('Record', recordSchema)

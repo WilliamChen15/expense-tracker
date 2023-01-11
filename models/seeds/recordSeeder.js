@@ -3,8 +3,8 @@ const Record = require('../record')
 const User = require('../user')
 const bcrypt = require('bcryptjs') // 種子資料的密碼也要加鹽雜湊
 
-const users = require('../../user.json').users
-const records = require('../../record.json').record
+const users = require('../../user.json')
+const records = require('../../record.json')
 
 db.on("error", () => {
   console.log("mongodb error!")
