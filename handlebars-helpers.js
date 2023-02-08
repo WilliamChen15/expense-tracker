@@ -9,8 +9,8 @@ Handlebars.registerHelper('getIcon', function (categoryId) {
           : `<i class="fas fa-pen text-success"></i>`
 })
 
-Handlebars.registerHelper('isSelected', function (selectedOption, thisOption) {
-  return (selectedOption === thisOption) ? 'selected' : ''
+Handlebars.registerHelper('isSelected', function (currentSelection, selection) {
+  return (currentSelection === selection) ? "selected" : "";
 })
 
 Handlebars.registerHelper('getDisplayDate', function (date) {
