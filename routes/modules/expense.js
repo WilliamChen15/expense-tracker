@@ -1,16 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const { currentTime } = require('../../date')
 
 // 新增頁面
 router.get('/new', (req, res) => {
-  // 另外寫然後引入會不會比較好?
-  const date = new Date()
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const currentTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
-
   res.render('form', { currentTime })
 })
 

@@ -1,5 +1,4 @@
 const Handlebars = require('handlebars')
-const Category = require('./models/category')
 
 Handlebars.registerHelper('getIcon', function (categoryId) {
   return categoryId === 1 ? `<i class="fas fa-home text-danger"></i>`
