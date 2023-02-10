@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
       records.forEach(record => {
         totalAmount += record.amount
       });
-      res.render('index', { records, totalAmount})
+      res.render('index', { records, totalAmount })
     })
 })
 
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     .then(records => {
       if (!records.length) {
         const isEmptyRecord = true
-        return res.render('index', { records, isEmptyRecord })
+        return res.render('index', { records, isEmptyRecord, category })
       }
       let totalAmount = 0
       records.forEach(record => {
