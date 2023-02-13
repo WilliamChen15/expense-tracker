@@ -9,12 +9,18 @@
           </div>
           <div class="col-8">
             {{#if record}}
-            <h4 class="text-center mt-3">請修改你的支出</h4>
+            <h4 class="text-center mt-3">請修改你的收支</h4>
             {{else}}
-            <h4 class="text-center mt-3">請輸入你的支出</h4>
+            <h4 class="text-center mt-3">請輸入你的收支</h4>
             {{/if}}
           </div>
           {{> message}}
+          <div id="type-radio">
+            <label><input type="radio" name="type" value="expense" {{isChecked record.type "expense" }} checked
+                required><span class="round button">支出</span></label>
+            <label><input type="radio" name="type" value="income" {{isChecked record.type "income" }}><span
+                class="round button">收入</span></label>
+          </div>
           <div class="mb-3">
             <label for="name" class="col-2 col-form-label">名稱 *</label>
             <input type="text" name="name" id="name" class="col-10 form-control" value="{{record.name}}" maxlength="8"
@@ -48,9 +54,9 @@
           </div>
           <div class="submit-button">
             {{#if record}}
-            <input type="submit" value="送出" class="col-4 btn btn-info btn-block">
+            <input type="submit" value="送出" class="col-4 btn btn-success btn-block">
             {{else}}
-            <input type="submit" value="新增支出" class="col-4 btn btn-info btn-block ">
+            <input type="submit" value="新增" class="col-4 btn btn-success btn-block ">
             {{/if}}
           </div>
         </div>

@@ -1,71 +1,97 @@
 [
   {
+    "type": "expense",
     "name": "午餐",
     "amount": "60",
     "categoryId": 4,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "晚餐",
     "amount": "60",
     "categoryId": 4,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "捷運",
     "amount": "120",
     "categoryId": 2,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "電影:驚奇隊長",
     "amount": "220",
     "categoryId": 3,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "租金",
     "amount": "25000",
     "categoryId": 1,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "IPhone",
     "amount": "35000",
     "categoryId": 5,
     "date": "2023/01/01"
   },
   {
+    "type": "income",
+    "name": "月薪",
+    "amount": "35000",
+    "categoryId": 5,
+    "date": "2023/01/10"
+  },
+  {
+    "type": "expense",
     "name": "丹丹",
     "amount": "123",
     "categoryId": 4,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "衣服",
     "amount": "2500",
     "categoryId": 5,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "唱歌",
     "amount": "350",
     "categoryId": 3,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "酒吧",
     "amount": "2500",
     "categoryId": 3,
     "date": "2023/01/01"
   },
   {
+    "type": "expense",
     "name": "高鐵",
     "amount": "1500",
     "categoryId": 2,
     "date": "2023/01/01"
   },
   {
+    "type": "income",
+    "name": "月薪",
+    "amount": "50000",
+    "categoryId": 5,
+    "date": "2023/01/15"
+  },
+  {
+    "type": "expense",
     "name": "珍奶",
     "amount": "60",
     "categoryId": 4,

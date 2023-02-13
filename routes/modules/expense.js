@@ -11,8 +11,9 @@ router.get('/new', (req, res) => {
 //新增行為
 router.post('/new', (req, res) => {
   const userId = req.user._id
-  const { name, date, categoryId, amount } = req.body
+  const { type, name, date, categoryId, amount } = req.body
   Record.create({
+    type,
     name,
     amount,
     userId,
@@ -37,9 +38,10 @@ router.get('/edit/:id', (req, res) => {
 router.put('/edit/:id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id
-  const { name, date, categoryId, amount } = req.body
+  const { type, name, date, categoryId, amount } = req.body
   return Record.findOne({ _id, userId })
     .then(record => {
+      record.type = type
       record.name = name
       record.date = date
       record.categoryId = categoryId

@@ -20,7 +20,7 @@ db.once('open', () => {
         password: bcrypt.hashSync(password, 10)
       })
         .then(user => {
-          const record = index ? records.slice(0, 6) : records.slice(6, 12) // 前6 : 後6
+          const record = index ? records.slice(0, 7) : records.slice(7, 14) // 前7 : 後7
           record.map(expense => {
             expense.userId = user._id
             return expense

@@ -12,11 +12,16 @@ router.get('/', (req, res) => {
         const isEmptyRecord = true
         return res.render('index', { records, isEmptyRecord })
       }
-      let totalAmount = 0
+      let totalAmount = 0, totalExpense = 0, totalIncome = 0
       records.forEach(record => {
-        totalAmount += record.amount
+        if (record.type === "expense") {
+          totalExpense += record.amount
+        } else {
+          totalIncome += record.amount
+        }
+        totalAmount = totalIncome - totalExpense
       });
-      res.render('index', { records, totalAmount })
+      res.render('index', { records, totalAmount, totalExpense, totalIncome })
     })
 })
 
@@ -35,11 +40,16 @@ router.post('/', (req, res) => {
         const isEmptyRecord = true
         return res.render('index', { records, isEmptyRecord, category })
       }
-      let totalAmount = 0
+      let totalAmount = 0, totalExpense = 0, totalIncome = 0
       records.forEach(record => {
-        totalAmount += record.amount
+        if (record.type === "expense") {
+          totalExpense += record.amount
+        } else {
+          totalIncome += record.amount
+        }
+        totalAmount = totalIncome - totalExpense
       });
-      res.render('index', { records, totalAmount, category })
+      res.render('index', { records, totalAmount, totalExpense, totalIncome, category })
     })
 })
 
