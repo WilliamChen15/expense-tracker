@@ -27,7 +27,7 @@ router.get('/register', (req, res) => {
 router.post('/register', (req, res) => {
   const { name, email, password, confirmPassword } = req.body
   const errors = []
-  if (!email || !password || !confirmPassword) {
+  if (!name || !email || !password || !confirmPassword) {
     errors.push({ message: '請確認完成必填欄位。' })
   }
   if (password !== confirmPassword) {

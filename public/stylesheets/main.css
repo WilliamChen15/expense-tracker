@@ -2,3 +2,13 @@
   display: flex;
   justify-content: center;
 }
+
+#log-out :hover {
+  color: whitesmoke;
+}
+
+.logout-button {
+  border-radius: 25%;
+  padding: 0 30px;
+  font-size: large;
+}

@@ -16,12 +16,12 @@
           </div>
           {{> message}}
           <div class="mb-3">
-            <label for="name" class="col-2 col-form-label">名稱*</label>
+            <label for="name" class="col-2 col-form-label">名稱 *</label>
             <input type="text" name="name" id="name" class="col-10 form-control" value="{{record.name}}" maxlength="8"
               required>
           </div>
           <div class="mb-3">
-            <label for="date" class="col-2 col-form-label">日期*</label>
+            <label for="date" class="col-2 col-form-label">日期 *</label>
             {{#if record}}
             <input type="date" name="date" id="date" class="col-10 form-control" value="{{getInputDate record.date}}"
               min="2000-01-01" max="2030-01-01" required>
@@ -31,7 +31,7 @@
             {{/if}}
           </div>
           <div class="mb-3">
-            <label for="categoryId" class="col-2 col-form-label">類別*</label>
+            <label for="categoryId" class="col-2 col-form-label">類別 *</label>
             <select name="categoryId" id="categoryId" class="col-10 custom-select text-secondary" required>
               <option value="">類別選擇</option>
               <option value=1 {{isSelected record.categoryId 1 }}>家居物業</option>
@@ -42,7 +42,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="amount" class="col-2 col-form-label">金額*</label>
+            <label for="amount" class="col-2 col-form-label">金額 *</label>
             <input type="number" name="amount" id="amount" class="col-10 form-control" value="{{record.amount}}" min="1"
               max="99999" required>
           </div>
