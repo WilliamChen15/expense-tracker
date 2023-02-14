@@ -1,66 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const Record = require('../../models/record')
-const { currentTime } = require('../../date')
+
+const expenseController = require('../../controllers/expense')
 
 // 新增頁面
-router.get('/new', (req, res) => {
-  res.render('form', { currentTime })
-})
+router.get('/new', expenseController.getNewExpense)
 
 //新增行為
-router.post('/new', (req, res) => {
-  const userId = req.user._id
-  const { type, name, date, categoryId, amount } = req.body
-  Record.create({
-    type,
-    name,
-    amount,
-    userId,
-    categoryId,
-    date
-  })
-    .then(() => res.redirect('/'))
-})
+router.post('/new', expenseController.postNewExpense)
 
 //編輯頁面
-router.get('/edit/:id', (req, res) => {
-  const userId = req.user._id
-  const _id = req.params.id
-  Record.findOne({ _id, userId })
-    .lean()
-    .then(record => {
-      res.render('form', { record })
-    })
-})
+router.get('/edit/:id', expenseController.getEditExpense)
 
 //編輯行為
-router.put('/edit/:id', (req, res) => {
-  const userId = req.user._id
-  const _id = req.params.id
-  const { type, name, date, categoryId, amount } = req.body
-  return Record.findOne({ _id, userId })
-    .then(record => {
-      record.type = type
-      record.name = name
-      record.date = date
-      record.categoryId = categoryId
-      record.amount = amount
-      return record.save()
-    })
-    .then(() => res.redirect('/'))
-    .catch(error => console.log(error))
-})
+router.put('/edit/:id', expenseController.putEditExpense)
 
 // 刪除
-router.delete('/:id', (req, res) => {
-  const userId = req.user._id
-  const _id = req.params.id
-  return Record.findOne({ _id, userId })
-    .then(record => record.remove())
-    .then(() => res.redirect('/'))
-    .catch(error => console.log(error))
-})
+router.delete('/:id', expenseController.deleteExpense)
 
 module.exports = router
 
