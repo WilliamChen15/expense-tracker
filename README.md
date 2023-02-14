@@ -1,5 +1,7 @@
 # expense-tracker
 
+![image](https://github.com/WilliamChen15/expense-tracker/blob/main/%E8%80%81%E7%88%B9%E8%A8%98%E5%B8%B3%E6%9C%AC.PNG)
+
 ## 功能  
 ### 可以註冊為使用者
 
