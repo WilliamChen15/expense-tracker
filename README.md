@@ -2,7 +2,7 @@
 
 # ![image](https://github.com/WilliamChen15/expense-tracker/blob/main/%E8%80%81%E7%88%B9%E8%A8%98%E5%B8%B3%E6%9C%AC.PNG)
 
-# 測試帳號
+## 測試帳號
 ###   email : dad@example.com  ;  password : 12345678  
 ###   email : daddy@example.com  ;  password : 12345678
 
