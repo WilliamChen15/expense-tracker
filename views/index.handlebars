@@ -4,6 +4,7 @@
 
   <div class="col-md-6 m-auto">
     <form id="category" action="/" method="POST" class="row row-cols-lg-auto my-2 g-3">
+      <input type="hidden" name="_csrf" value="{{csrfToken}}">
       <div class="col-12">
         <div class="form-check">
           <select class="form-select" id="category-dropdown" name="category" aria-label="select-by-category" onchange="(() => {
@@ -94,6 +95,7 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                       <form action="/expense/{{this._id}}?_method=DELETE" method="post">
+                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
                         <input type="submit" value="刪除" class="btn btn-danger">
                       </form>
                     </div>

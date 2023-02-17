@@ -15,6 +15,8 @@ db.once('open', () => {
     users.map((user, index) => {
       const { name, email, password } = user
       return User.create({
+        active:true,
+        activeToken:null,
         name,
         email,
         password: bcrypt.hashSync(password, 10)

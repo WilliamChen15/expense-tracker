@@ -13,12 +13,16 @@ const methodOverride = require('method-override')
 
 const flash = require('connect-flash')
 
+const csrf = require('csurf') // 有漏洞因此被棄用，但不知道有什麼替代套件，先將就一下
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 const port = process.env.PORT
 
 const usePassport = require('./config/passport')
+const cookieParser = require('cookie-parser')
+const csrfProtection = csrf({ cookie: true })
 
 const app = express()
 const routes = require('./routes')
@@ -35,6 +39,9 @@ app.use(session({
 // body-parser 解析 req
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(cookieParser())
+app.use(csrfProtection)
+
 app.use(methodOverride('_method'))
 
 app.use(express.static('public'))
@@ -49,6 +56,8 @@ app.use((req, res, next) => {
   res.locals.user = req.user
   res.locals.success_msg = req.flash('success_msg')
   res.locals.warning_msg = req.flash('warning_msg')
+  res.locals.error = req.flash('error');
+  res.locals.csrfToken = req.csrfToken()
   next()
 })
 

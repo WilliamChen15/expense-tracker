@@ -16,6 +16,22 @@ const userSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  // 判斷開通
+  active: {
+    type: Boolean,
+    default: false,
+    required: true
+  },
+  activeToken:{
+    type: String
+  },
+  // 重設密碼
+  resetToken: {
+    type: String
+  },
+  resetTokenExpiration: {
+    type: Date
   }
 })
 module.exports = mongoose.model('User', userSchema)

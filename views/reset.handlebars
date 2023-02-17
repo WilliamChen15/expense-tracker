@@ -1,0 +1,23 @@
+<div class="row mt-5">
+  <div class="col-md-4 m-auto">
+    <div class="card card-body">
+      <div class="col-2 ml-2">
+        <small class="text-danger pl-2">*必填</small>
+      </div>
+      <h1 class="text-center mt-3">忘記密碼 ?</h1>
+      {{> message}}
+      <form action="/users/reset" method="POST" novalidate>
+        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        <div class="mb-3">
+          <div class="mb-3">
+            <label for="email" class="mb-2">請輸入電子信箱Email *</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+              value="{{ email }}" required>
+          </div>
+          <div class="d-grid col-2 mx-auto">
+            <button type="submit" class="btn btn-primary btn-block ">重設密碼</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
