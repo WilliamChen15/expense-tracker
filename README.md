@@ -3,7 +3,9 @@
 ![image](https://github.com/WilliamChen15/expense-tracker/blob/main/%E8%80%81%E7%88%B9%E8%A8%98%E5%B8%B3%E6%9C%AC.PNG)
 
 ## 功能  
-### 可以註冊為使用者
+### 可以註冊為使用者  
+
+### 註冊成功後須至信箱收信以開通使用者帳號  
 
 ### 使用者登入後可以在首頁瀏覽所有收支的總金額  
 
@@ -20,6 +22,8 @@
 ### 使用者登入後可以篩選特地類別的收支紀錄    
 ### 使用者登入後可以新增收支  
 ### 使用者登入後可以刪除收支  
+
+### 若忘記密碼，可於信箱收信後重設密碼  
 
 ## 安裝  
 ### 在終端機輸入以下指令複製此專案於本機
@@ -47,3 +51,6 @@ bcryptjs - 2.4.3
 passport-local - 1.0.0  
 connect-flash - 0.1.1  
 express-session - 1.17.1  
+nodemailer - 6.9.1  
+cookie-parser - 1.4.6  
+csurf - 1.11.0  
