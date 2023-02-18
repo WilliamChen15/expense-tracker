@@ -18,7 +18,7 @@ const csrf = require('csurf') // 有漏洞因此被棄用，但不知道有什�
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
 const usePassport = require('./config/passport')
 const cookieParser = require('cookie-parser')

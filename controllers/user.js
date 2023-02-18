@@ -76,7 +76,8 @@ module.exports = {
       req.flash('success_msg', '已發送驗證信，請至信箱收信並開通帳號。')
       res.redirect('/users/login')
 
-      const link = process.env.PORT ? `http://localhost:3000/users/active/${activeToken}` : `https://powerful-stream-78506.herokuapp.com/users/active/${activeToken}`
+      const host = process.env.HOST
+      const link = `http://${host}/users/active/${activeToken}`
 
       // 取出新造好的user
       const newUser = await User.findOne({ email })
@@ -160,8 +161,8 @@ module.exports = {
       req.flash('success_msg', '已發送驗證信，請至信箱收信並重設密碼。')
       res.redirect('/users/login')
 
-      // 判斷應該給哪份連結
-      const link = process.env.PORT ? `http://localhost:3000/users/new-password/${resetToken}` : `https://powerful-stream-78506.herokuapp.com/users/new-password/${resetToken}`
+      const host = process.env.HOST
+      const link = `http://${host}/users/new-password/${resetToken}`
 
       // 寄信
       transporter.sendMail({
@@ -171,6 +172,7 @@ module.exports = {
         html: `
           <p>${user.name} 您好。</p>
           <p>請點擊<a href=${link}> 此連結 </a>以重設密碼。</p>
+          <p>注意，此憑證僅10分鐘內有效。</p>
           `
       })
     } catch (err) {
