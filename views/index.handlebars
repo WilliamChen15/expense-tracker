@@ -95,7 +95,7 @@
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
                       <form action="/expense/{{this._id}}?_method=DELETE" method="post">
-                        <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                        <input type="hidden" name="_csrf" value="{{../csrfToken}}">
                         <input type="submit" value="刪除" class="btn btn-danger">
                       </form>
                     </div>
